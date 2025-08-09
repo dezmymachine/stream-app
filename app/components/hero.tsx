@@ -189,7 +189,7 @@ export default function Hero() {
       const link = document.createElement('link')
       link.rel = 'preload'
       link.as = 'image'
-      link.href = `https://image.tmdb.org/t/p/w1280${movies[0].backdrop_path}`
+      link.href = `https://image.tmdb.org/t/p/original/${movies[0].backdrop_path}`
       document.head.appendChild(link)
       return () => link.remove()
     }
@@ -231,7 +231,7 @@ export default function Hero() {
     >
       <div className="absolute inset-0 z-0">
         <img
-          src={`https://image.tmdb.org/t/p/w1280${active.backdrop_path}`}
+          src={`https://image.tmdb.org/t/p/original/${active.backdrop_path}`}
           alt={active.title || active.name}
           className={`h-full w-full object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'
             }`}

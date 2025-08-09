@@ -1,10 +1,10 @@
 import type { Route } from './+types/tv-page'
-import { Play, Star, X } from 'lucide-react'
+import { Play, X } from 'lucide-react'
 import type { TvShow } from '~/types/tmdb'
 import { getTvDetails } from '~/services/movie_details'
 import { useState } from 'react'
 
-export async function clientLoader({ params }: Route.ClientLoaderArgs) {
+export async function clientLoader({ params }: Route.LoaderArgs) {
   const { data } = await getTvDetails(Number(params.id))
   return data
 }
@@ -22,7 +22,6 @@ export default function TvShowDetails({ loaderData }: Route.ComponentProps) {
   const [showModal, setShowModal] = useState(false)
   const openModal = () => setShowModal(true)
   const closeModal = () => setShowModal(false)
-  const imdbId = loaderData.imdb_id
 
   return (
     <main className="min-h-screen bg-black text-white">

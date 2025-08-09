@@ -4,7 +4,7 @@ import { getMovieDetails } from '~/services/movie_details'
 import type { Movie } from '~/types/tmdb'
 import { useState } from 'react'
 
-export async function clientLoader({ params }: Route.ClientLoaderArgs) {
+export async function clientLoader({ params }: Route.LoaderArgs) {
   const { data } = await getMovieDetails(Number(params.id))
   return data
 }

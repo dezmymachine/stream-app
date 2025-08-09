@@ -237,7 +237,6 @@ export default function Hero() {
             }`}
           draggable={false}
           loading="eager"
-          fetchpriority="high"
           onLoad={() => setImageLoaded(true)}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
